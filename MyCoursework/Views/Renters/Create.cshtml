@@ -1,0 +1,57 @@
+﻿@model MyCoursework.Models.Renter
+
+@{
+    ViewData["Title"] = "Забронювати";
+}
+<style>
+    body {
+        background-image:url(https://www.luxuryns.com/images/banner.jpg);
+    }
+</style>
+    <div class="row justify-content-center" style="background-color:#EEEEEE; text-align:center; background-color:rgba(238, 238, 238, 0.7);">
+        <div class="col-md-4">
+            <h4 style="text-align: center;">
+                <strong>Бронювання та оренда</strong>
+            </h4>
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Surname" class="control-label"></label>
+                    <input asp-for="Surname" class="form-control" />
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone" class="control-label"></label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Experience" class="control-label"></label>
+                    <input asp-for="Experience" class="form-control" />
+                    <span asp-validation-for="Experience" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CarId" class="control-label"></label>
+                    <select asp-for="CarId" class="form-control" asp-items="ViewBag.CarId"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Info" class="control-label"></label>
+                    <input asp-for="Info" class="form-control" placeholder="Примітки до вашого замовлення." />
+                    <span asp-validation-for="Info" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="text-align:center">
+                    <input type="submit" value="Забронювати" class="btn btn-secondary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,205 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+
+}
+.bg-yellow {
+    background-color: #DCB927;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #DCB927;
+    border-color: #1861ac;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #DCB927;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+html, body {
+    /* IE 10-11 didn't like using min-height */
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: #EEEEEE;
+    font-family: 'Open Sans';
+}
+
+.content {
+    flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+    padding: 20px;
+}
+
+.footer {
+    flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+    padding: 20px;
+}
+footer {
+    background: #153460;
+    color: white;
+}
+/*
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+
+html {
+  position: relative;
+  min-height: 100%;
+
+}
+
+body {
+    /* Margin bottom by footer height 
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    background: #EEEEEE;
+
+}
+
+.footer {
+  
+    position: absolute;
+    bottom: 0;
+    background-color: #153460;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    /*flex: 0 0 auto;
+}*/
+
+
+/*-------------------------------------------------*/
+@media screen {
+    .thumbnail-gallery {
+        margin: 0 auto;
+        display: table;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        .thumbnail-gallery > div {
+            margin: 0 auto;
+            display: table-row;
+        }
+
+        .thumbnail-gallery .thumbnail {
+            margin: 0 auto;
+            display: table-cell;
+            border: 1px solid #C0C0C0;
+        }
+}
+
+span.price {
+    color: #153460;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#test{
+    width: 290px;
+    height:225px;
+}
+#testJoiner {
+    display:inline-block;
+    text-align: left;
+    padding: 0px 15px;
+}
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 96.25%; /*56.25%;*/
+    position: relative;
+    height: 0;
+}
+#faq {
+    margin: 30px;
+}
+
+.contacts_phone__item {
+    list-style: none;
+    background: url(https://lh3.googleusercontent.com/proxy/0_g7VJK_tspSyaZXLhvjmmIA5UFCxxoQhe7iGpMoRr1-Qj9jl7n-L_RPx0TW_p62T3TzsrjcbYXLwk01ISyWphCbuJGXJC0Q2IlBFapAO_-jZco) no-repeat;
+    background-size: 16px;
+    padding-left: 24px;
+}
+.contacts_address__item {
+    list-style: none;
+    background: url(https://img.icons8.com/ios/452/address--v1.png) no-repeat;
+    background-size: 16px;
+    padding-left: 24px;
+}
+/*------------------------------*/
+.vc_message_box {
+    border: 1px solid transparent;
+    display: block;
+    overflow: hidden;
+    margin: 0 0 21.73913043px 0;
+    padding: 1em 1em 1em 4em;
+    position: relative;
+    font-size: 1em;
+    box-sizing: border-box;
+    border-color: #50485b;
+    border-width: 2px;
+}
+.vc_message_box-icon {
+    bottom: 0;
+    font-size: 1em;
+    font-style: normal;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 4em;
+}
+
+.photo {
+    width: 350px;
+    height: 231px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.personPhoto {
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
+}

@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewData["Title"] = "Умови";
+}
+    <div class="container" style="background: #ffffff">
+
+        <div class="row mt-5 mb-2">
+            <div class="col-sm-8">
+                <h1>Умови прокату</h1>
+                <h5>Умови прокату авто</h5>
+                <ol>
+                    <li>Вік не менше 21 року.</li>
+                    <li>Стаж водіння від 2-х років.</li>
+                    <li>Наявність при собі оригіналів документів, а саме паспорт, ідентифікаційний код і водійське посвідчення.</li>
+                    <li>В ціну оренди входить застава 300$ + ціна, вказана на сайті.</li>
+                </ol>
+                <p>
+                    Розрахунок за послуги оренди здійснюється готівковим і безготівковим способом оплати.
+                </p>
+                <p>
+                    Орендар має право використовувати транспортний засіб по всій Україні крім обмежених місць прописаних в договорі.
+                </p>
+                <p>
+                    Існує ліміт пробігу на 1 добу 350 км. Понад установлений ліміт вважається перепробіг за кожен кілометр, інформацію про тарифи можна дізнатися у менеджера.
+                </p>
+                <p>
+                    Кожне авто компанії застраховано за програмою ОСАГО, а так само КАСКО з франшизою в сумі рівний депозиту.
+                </p>
+                <p>
+                    Депозит це обов'язкова заставна сума, яка вноситься в момент підписання договору і повертається клієнтові після передачі транспортного засобу назад компанії.
+                </p>
+                <p>
+                    Початок дії прокату і закінчення його прописується в договорі. При запізненні до часу повернення авто більш ніж на 1 годину і вище, відбувається оплата ще одного дня оренди.
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <h4 style="padding-left: 24px">Контакти</h4>
+                <ul>
+                    <li class="contacts_phone__item">
+                        <a href="tel:+380500839261" style="color:#153460">+380500839261</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="contacts_address__item">м. Полтава, бул. Ю. Побєдоносцева 7</li>
+                </ul>
+                <ul class="list-unstyled" style="padding-left: 24px">
+                    <li> <a href="https://telegram.me/khrushchev_xotta6bi4"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Telegram_Messenger.png" height="50" ; width="50" ; /></a></li>
+                </ul>
+                <hr />
+                <div id="test" style="padding-left: 24px">
+                    <img class="img-thumbnail" src="https://img.favcars.com/ford/fiesta/ford_fiesta_2010_images_14_b.jpg" id="img_1" style="position: absolute;" alt="" height="290" width="290">
+                    <img class="img-thumbnail" src="https://autoportal.ua/img/newcars34/min/hyundai_accent_20_34.jpg" id="img_2" style="opacity: 0; filter: alpha(opacity=0); position: absolute;" alt="" height="290" width="290">
+                    <img class="img-thumbnail" src="https://autoportal.ua/img/newcars34/min/renault_logan_17_34.jpg" id="img_3" style="opacity: 0; filter: alpha(opacity=0); position: absolute;" alt="" height="290" width="290">
+                </div>
+                <div class="form-group text-center">
+                    <p><a class="btn btn-secondary" asp-controller="Cars" asp-action="Index">Забронювати</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        var d = document;
+        var image_count = 3;
+        var interval = 5000;
+        var time_out = 25;
+        var i = 0;
+        var timeout;
+        var opacity = 100;
+
+        function change_image() {
+            opacity--;
+            var j = i + 1;
+            var current_image = 'img_' + i;
+            if (i == image_count) j = 1;
+            var next_image = 'img_' + j;
+            d.getElementById(current_image).style.opacity = opacity / 100;
+            d.getElementById(current_image).style.filter = 'alpha(opacity=' + opacity + ')';
+            d.getElementById(next_image).style.opacity = (100 - opacity) / 100;
+            d.getElementById(next_image).style.filter = 'alpha(opacity=' + (100 - opacity) + ')';
+            timeout = setTimeout("change_image()", time_out);
+            if (opacity == 1) {
+                opacity = 100;
+                clearTimeout(timeout);
+            }
+        }
+
+        setInterval(function () { i++; if (i > image_count) i = 1; change_image(); }, interval);
+    </script>
+

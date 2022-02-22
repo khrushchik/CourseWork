@@ -1,0 +1,105 @@
+﻿@model MyCoursework.Models.Joiner
+
+@{
+    ViewData["Title"] = "Приєднатися";
+}
+    <div class="container" style="background: #ffffff">
+        <h1>Долучайся до команди!</h1>
+        @*--------------------*@
+    <div class="row" style="margin-bottom:35px">
+        <div id="testJoiner" class="col-sm-6">
+            <h2 style="text-align: left">Хочете здати авто в оренду?</h2>
+            <div>
+                <p><b>PoltavaCarShare</b> пропонує співпрацю власникам автомобілів і потенційним інвесторам, зацікавленим в автобізнесі!</p>
+                <p>Наша компанія має велику базу постійних клієнтів, а так само потік заявок від нових людей бажаючих орендувати, можливо, саме ваш автомобіль!</p>
+                <p>Ми зацікавлені в різних автомобілях, від економ класу до преміальних авто!</p>
+            </div>
+            <h2>Що ми пропонуємо?</h2>
+            <div>
+                <ul>
+                    <li>Стабільний дохід від 400 $ до 5000 $ в залежності від класу авто.</li>
+                    <li>Прозора схема співпраці: 70% доходу Ваші, 30% комісія компанії.</li>
+                    <li>Щомісячне надання фінансової звітності та іншої документації за запитом.</li>
+                    <li>Повний контроль технічного стану!</li>
+                    <li>Збереження ресурсу автомобіля (існує ліміт пробігу для клієнтів).</li>
+                    <li>Ретельна перевірка нових клієнтів, що бажають взяти ваше авто в оренду.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div>
+                <img class="img-thumbnail" width="600" height="391" src="https://img.freepik.com/free-photo/businessman-hand-holding-car-keys-front-with-new-car-parking-in-front-of-the-house-transportation-concept_109549-452.jpg?size=626&ext=jpg&ga=GA1.2.1626760161.1616025600" alt="Здати своє авто" sizes="(max-width: 600px) 100vw, 600px" />
+            </div>
+            <div id="testJoiner">
+                <h2 style="text-align: left">Що нам потрібно від Вас?</h2>
+                <div>
+                    <ol>
+                        <li>Ваш автомобіль повинен бути не старше 7 років.</li>
+                        <li>Обов'язкова справність всіх вузлів, систем і механізмів.</li>
+                        <li>Наявність 2х ключів і страхового поліса КАСКО.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        @*------------------------------*@
+    <p style="text-align: center; margin-bottom:15px"><b>Якщо Вас зацікавила Наша пропозиція, заповніть заявку або зателефонуйте за вказаними номерами на сайті!</b></p>
+        <h4 style="text-align: center;"><strong>Заявка :</strong></h4>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Body" class="control-label"></label>
+                        <input asp-for="Body" class="form-control" />
+                        <span asp-validation-for="Body" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Volume" class="control-label"></label>
+                        <input asp-for="Volume" class="form-control" />
+                        <span asp-validation-for="Volume" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FuelType" class="control-label"></label>
+                        <input asp-for="FuelType" class="form-control" />
+                        <span asp-validation-for="FuelType" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Transmission" class="control-label"></label>
+                        <input asp-for="Transmission" class="form-control" />
+                        <span asp-validation-for="Transmission" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PersonName" class="control-label"></label>
+                        <input asp-for="PersonName" class="form-control" />
+                        <span asp-validation-for="PersonName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Phone" class="control-label"></label>
+                        <input asp-for="Phone" class="form-control" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" value="Надіслати" class="btn btn-primary" />
+                        @{
+                            if (ViewBag.SuccessMessage != null)
+                            {
+                                <div>
+                                    @ViewBag.SuccessMessage
+                                </div>
+                            }
+                        }
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }

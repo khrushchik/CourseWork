@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MyCoursework.Models.Car>
+
+    @{
+        ViewData["Title"] = "Автопарк";
+    }
+    <div class="row mt-5 mb-2">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4">
+                <div id="test">
+                <img class="img-thumbnail" src="@(item.Photo)" alt="@item.Name" width="290" height="290" />
+                </div>
+                <h2>@item.Name</h2>
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail">
+                        <img src="https://www.procars-rent.com.ua/wp-content/uploads/2021/03/obem-dvigatelya.png">
+                        <p>@item.Volume см<sup>3</sup></p>
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://www.procars-rent.com.ua/wp-content/uploads/2021/03/transmissiya.png">
+                        <p>@item.Transmission</p>
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://www.procars-rent.com.ua/wp-content/uploads/2021/03/type-topliva.png">
+                        <p>@item.FuelType</p>
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://cdn.pixabay.com/photo/2017/06/09/13/08/car-2386838_1280.png" width="25" height="25">
+                        <p>@item.Body</p>
+                    </div>
+                </div>
+                <p><span class="price">@item.Price $</span></p>
+                <p><a class="btn btn-secondary" asp-controller="Renters" asp-action="Create">Забронювати</a></p>
+            </div>
+         }
+    </div>

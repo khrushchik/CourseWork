@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "Про нас";
+}
+    <div class="container" style="background: #ffffff">
+        <h2 style="text-align: left">Хто ми?</h2>
+        <div id="testJoiner">
+            <h3>Керуй своїм життям!</h3>
+            <p>З цієї мрії народилася наша компанія.</p>
+            <p>
+                Наша компанія розвивається дуже динамічно і з кожним місяцем поповнює свій автопарк.
+            </p>
+            <p>
+                У міру зростання нашої компанії зростав і ринок в цілому, і з'являлися нові проблеми, які вимагали об'єднання учасників ринку.
+            </p>
+            <p>
+                Ми взяли на себе ініціативу і заснували компанію, яка дозволить об'єднати тих, хто хоче працювати в сфері оренди.
+            </p>
+            <p>
+                Об'єднавши учасників ринку, ми намагаємося захистити клієнтів від недобросовісних компаній, а добросовісні компанії захистити від недобросовісних клієнтів.
+            </p>
+            <p>
+                Сьогодні компанія PoltavaCarShare - це компанія яка надає повний спектр послуг з оренди автомобілів з європейським рівнем якості обслуговування і європейськими стандартами, що означає: повна страховка, цілодобовий Call Center 24/7 для наших клієнтів, а також Road Assistance 24/7. Ми постійно працюємо над тим, щоб покращувати наш сервіс.
+            </p>
+            <p>
+                У 2021 році компанія готується отримати для прокату електромобілі, таких як: Nissan Leaf, Smart, Tesla S, BMW I3. Ера електромобілів вже настає, і ми вважаємо своїм обов'язком дати можливість клієнтам спробувати ці машини майбутнього.
+            </p>
+            <p>
+                Також, зовсім скоро ми станемо першопрохідцями і відкриємо зовсім новий напрямок в сфері прокату - мотопрокат. Відкривши цей напрямок, ми сподіваємося здійснити мрії багатьох клієнтів, подарувавши їм море незабутніх емоцій.
+            </p>
+            <p>
+                Наша команда продовжує розвивати нашу компанію щохвилини, щоб ще більше розширити горизонти нашим клієнтам.
+            </p>
+            <div style="text-align: center"><h5>Якщо виникли питання - телефонуйте за номером:</h5></div>
+            <div style="text-align: center; color:#153460;">
+                <a href="tel:+380500839261">+380500839261</a>
+            </div>
+            <div style="text-align: center; padding-top: 15px">
+                <h5>Або в telegram:</h5>
+                <a href="https://telegram.me/khrushchev_xotta6bi4"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Telegram_Messenger.png" height="50" ; width="50" ; /></a>
+            </div>
+        </div>
+        <div>
+            <h1>Де ми?</h1>
+        </div>
+        <div id="googleMap" style="width:100%;height:400px;"></div>
+        </div>
+        <script>
+            function myMap() {
+                var mapProp = {
+                    center: new google.maps.LatLng(49.57511319137877, 34.51055529111609),
+                    zoom: 15,
+                };
+                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                let myMarkerOptions = {
+                    position: new google.maps.LatLng(49.57511319137877, 34.51055529111609),
+                    map: map
+                }
+                let myMarker = new google.maps.Marker(myMarkerOptions);
+                const infoString = "Офіс" + '</br>' + "\"PoltavaCarShare\"" + '</br>';
+                console.log('info string is ', infoString);
+                var infowindow = new google.maps.InfoWindow({
+                    content: infoString
+                });
+                myMarker.addListener('click', function () {
+                    infowindow.open(map, myMarker);
+                });
+
+            }
+        </script>
+        @*
+        https://console.cloud.google.com/apis/credentials?_ga=2.226837145.508427949.1618310808-134661426.1582985879&angularJsUrl=%2Fprojectselector%2Fapis%2Fcredentials%3F_ga%3D2.226837145.508427949.1618310808-134661426.1582985879%26supportedpurview%3Dproject%26folder%3Dtrue%26organizationId%3Dtrue&project=level-skyline-310610&folder=&organizationId=&supportedpurview=project
+        если карты нет - новый ключ создать
+        *@
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVXVxeQFf8JzzkyW59j5lNwUZ-uK80U0s&callback=myMap"></script>
